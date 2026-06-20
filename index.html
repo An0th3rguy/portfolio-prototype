@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Amodent s.r.o. — Centrum zubní péče</title>
+<meta name="description" content="Pečujeme o váš úsměv s láskou. Privátní zubní ordinace v Praze 4.">
+<link href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{overflow-x:hidden;max-width:100%}
+body{font-family:'Inter',sans-serif;color:#2a2a2a;line-height:1.5;background:#f4f1ea}
+a{color:inherit;text-decoration:none}
+.amo-page{max-width:1080px;margin:1.5rem auto;background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 12px 40px rgba(60,80,60,0.08);border:1px solid #eceae3}
+
+.amo-top{display:flex;align-items:center;justify-content:space-between;padding:1.5rem 2.4rem;flex-wrap:wrap;gap:1.2rem;border-bottom:1px solid #eceae3}
+.amo-contact{text-align:right;font-size:13px;line-height:1.7;color:#777}
+.amo-contact a{color:#4a8f6b;font-weight:600}
+.amo-contact .tel{font-size:16px}
+.amo-headerright{display:flex;align-items:center;gap:18px}
+.amo-amorek{height:72px;width:auto;display:block;flex-shrink:0}
+
+.logo-letter{font-family:'Bree Serif',serif;color:#231f20;transform:skewX(-2deg)}
+
+.amo-layout{display:grid;grid-template-columns:250px minmax(0,1fr);gap:0}
+.amo-side,.amo-content{min-width:0}
+.amo-side{background:#f8f6f0;padding:2rem 1.6rem;border-right:1px solid #eceae3}
+.amo-side h3{font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#4a8f6b;margin:1.8rem 0 0.7rem;font-weight:600}
+.amo-side h3:first-child{margin-top:0}
+.amo-side a{display:flex;align-items:center;gap:8px;font-size:14px;padding:8px 10px;margin:0 -10px;color:#4a4a4a;border-radius:8px;transition:background 0.15s,color 0.15s}
+.amo-side a:hover{background:#fff;color:#4a8f6b}
+.amo-side a::before{content:'';width:5px;height:5px;border-radius:50%;background:#cfd9d0;flex-shrink:0;transition:background 0.15s}
+.amo-side a:hover::before{background:#4a8f6b}
+.amo-map{margin-top:0.4rem;border-radius:12px;overflow:hidden;border:1px solid #e5e5e5;display:block}
+.amo-map iframe{width:100%;display:block;border:0}
+.amo-maplinks{display:flex;flex-wrap:wrap;gap:8px;margin-top:0.85rem}
+.amo-side a.amo-maplink{display:inline-flex;align-items:center;gap:8px;width:auto;margin:0;padding:9px 17px;border:1px solid #4a8f6b;border-radius:100px;background:#fff;color:#4a8f6b;font-size:13px;font-weight:600;letter-spacing:0.01em;transition:background 0.2s,color 0.2s,box-shadow 0.2s}
+.amo-side a.amo-maplink::before{display:none}
+.amo-side a.amo-maplink svg{width:14px;height:14px;flex-shrink:0}
+.amo-side a.amo-maplink:hover{background:#4a8f6b;color:#fff;box-shadow:0 4px 14px rgba(74,143,107,0.28)}
+
+.amo-content{padding:2.4rem}
+.amo-hero{position:relative;border-radius:16px;overflow:hidden;box-shadow:0 8px 28px rgba(60,80,60,0.12)}
+.amo-hero img{width:100%;display:block}
+.amo-hero .ov{position:absolute;left:0;right:0;bottom:0;padding:2.2rem 1.8rem 1.4rem;background:linear-gradient(to top,rgba(20,40,30,0.78),transparent)}
+.amo-hero .ov h1{font-family:'Fraunces',serif;font-weight:500;font-size:30px;color:#fff;line-height:1.15}
+.amo-hero .ov h1 em{font-style:italic;color:#bfe6cf}
+
+.amo-sub{display:flex;align-items:center;justify-content:space-between;margin:0 0 1.2rem;flex-wrap:wrap;gap:1rem}
+.amo-sub p{font-family:'Fraunces',serif;font-size:17px;color:#555;font-style:italic}
+.amo-langs{font-size:11px;color:#aaa;letter-spacing:0.08em}
+.amo-langs b{color:#4a8f6b;font-weight:600}
+.amo-cta{display:inline-block;margin-top:1.2rem;background:#4a8f6b;color:#fff;font-size:14px;font-weight:600;padding:12px 26px;border-radius:100px;transition:background 0.2s}
+.amo-cta:hover{background:#3a7857}
+
+.amo-foot{text-align:center;padding:1.4rem;border-top:1px solid #eceae3;font-size:12px;color:#b5b2a8;letter-spacing:0.04em}
+
+.amo-navgroup:first-child h3{margin-top:0}
+
+.amo-team-toggle{display:flex;align-items:center;gap:8px;width:calc(100% + 20px);margin:0 -10px;padding:8px 10px;border:none;background:none;font:inherit;font-size:14px;color:#4a4a4a;border-radius:8px;cursor:pointer;text-align:left;transition:background 0.15s,color 0.15s}
+.amo-team-toggle::before{content:'';width:5px;height:5px;border-radius:50%;background:#cfd9d0;flex-shrink:0;transition:background 0.15s}
+.amo-team-toggle:hover{background:#fff;color:#4a8f6b}
+.amo-team-toggle:hover::before{background:#4a8f6b}
+.amo-caret{margin-left:auto;font-size:10px;transition:transform 0.25s}
+.amo-team-toggle[aria-expanded="true"]{color:#4a8f6b}
+.amo-team-toggle[aria-expanded="true"]::before{background:#4a8f6b}
+.amo-team-toggle[aria-expanded="true"] .amo-caret{transform:rotate(180deg)}
+
+.amo-teamsub{max-height:0;overflow:hidden;transition:max-height 0.3s ease}
+.amo-teamsub.open{max-height:500px}
+@media(min-width:761px){
+  .amo-teamsub{margin-left:12px;border-left:2px solid #ece9e2;padding-left:6px}
+}
+
+@media(max-width:760px){
+  .amo-contact{text-align:left}
+
+  .amo-layout{display:flex;flex-direction:column;padding:1.3rem 1.3rem 0.4rem;gap:0;min-width:0}
+  .amo-side,.amo-content{display:contents}
+  .amo-navgroup,.amo-teamsub,.amo-hero,.amo-sub,.amo-cta,.amo-map,.amo-side>h3,.amo-maplinks{min-width:0;max-width:100%}
+
+  .amo-navgroup{order:1}
+  .amo-sub{order:3}
+  .amo-hero{order:4}
+  .amo-cta{order:5}
+  .amo-side > h3{order:6}
+  .amo-map{order:7}
+  .amo-maplinks{order:8}
+
+  .amo-navgroup{display:block;margin:0 0 1rem}
+  .amo-navgroup h3{margin:0 0 0.6rem}
+  .amo-links{display:flex;flex-wrap:wrap;gap:8px;min-width:0;padding-bottom:0}
+
+  .amo-side a{padding:7px 14px;margin:0;border:1px solid #e0ddd6;border-radius:100px;background:#fff;white-space:nowrap;font-size:13px}
+  .amo-side a::before{display:none}
+  .amo-side a:hover{background:#f0ede6;color:#4a8f6b}
+
+  .amo-team-toggle{display:inline-flex;align-items:center;gap:6px;width:auto;margin:0;padding:7px 14px;border:1px solid #4a8f6b;border-radius:100px;background:#fff;color:#4a8f6b;white-space:nowrap;font:inherit;font-size:13px;font-weight:500;cursor:pointer}
+  .amo-team-toggle::before{display:none}
+  .amo-caret{display:inline-block;margin-left:0;transition:transform 0.25s;font-size:10px}
+  .amo-team-toggle[aria-expanded="true"]{background:#eaf3ee}
+  .amo-team-toggle[aria-expanded="true"] .amo-caret{transform:rotate(180deg)}
+
+  .amo-teamsub{display:none}
+  .amo-teamsub.open{display:flex;flex-basis:100%;flex-wrap:wrap;gap:8px;padding-top:0.2rem;max-height:none;overflow:visible}
+
+  .amo-sub{margin:0 0 0.9rem}
+  .amo-sub p{font-size:15px}
+  .amo-cta{margin:0 0 1.4rem}
+
+  .amo-hero{border-radius:12px;margin:0 0 1.4rem}
+  .amo-hero img{width:100%;max-width:100%}
+  .amo-hero .ov{padding:1.4rem 1.1rem 1rem}
+  .amo-hero .ov h1{font-size:22px}
+
+  .amo-side > h3{margin:0 0 0.5rem;padding-top:0.8rem;border-top:1px solid #eceae3}
+  .amo-map{width:100%;max-width:100%;margin:0}
+  .amo-map iframe{width:100%;max-width:100%;height:150px;display:block}
+  .amo-maplinks{margin:0.85rem 0 1.2rem}
+
+  .amo-page{margin:0;border-radius:0;border-left:none;border-right:none;overflow-x:hidden;max-width:100%}
+  .amo-top{padding:1.1rem 1.4rem}
+  .amo-top img{height:58px;max-width:100%}
+  .amo-amorek{height:52px}
+  .amo-headerright{gap:12px}
+  img,iframe{max-width:100%}
+}
+@media(max-width:680px){.logo-letter{font-size:40px !important}}
+@media(max-width:600px){.amo-amorek{display:none}}
+</style>
+</head>
+<body>
+
+<div class="amo-page">
+
+  <div class="amo-top">
+
+    <a href="index.html" style="display:inline-block;line-height:0;">
+      <img src="images/logo-amodent.png" alt="Amodent s.r.o. — Centrum zubní péče" style="height:78px;width:auto;display:block;">
+    </a>
+
+    <div class="amo-headerright">
+      <img class="amo-amorek" src="images/amorek.png" alt="amorek">
+      <div class="amo-contact">
+      Kvestorská 8/5, Praha 4, 140 00<br>
+      <span class="tel">tel.: <a href="tel:+420724784784">724 784 784</a></span><br>
+      <a href="mailto:amodentcz@gmail.com">amodentcz@gmail.com</a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="amo-layout">
+
+    <aside class="amo-side" id="amoSidebar">
+      <div class="amo-navgroup">
+        <h3>Informace</h3>
+        <div class="amo-links">
+          <a href="aktualn-.html">Aktuálně</a>
+          <a href="sluzby.html">Služby</a>
+          <a href="cenik.html">Ceník</a>
+          <a href="ordina-ni-doba.html">Ordinační doba</a>
+          <button type="button" class="amo-team-toggle" aria-expanded="false" aria-controls="teamGroup" onclick="toggleTeam(this)">Náš tým <span class="amo-caret" aria-hidden="true">▾</span></button>
+          <div class="amo-teamsub" id="teamGroup">
+            <a href="mudr.-lenka-t-mova.html">MUDr. Lenka Tůmová</a>
+            <a href="mudr.-jan-jires.html">MUDr. Jan Jireš</a>
+            <a href="mddr.-eva-strnadova.html">MDDr. Eva Strnadová</a>
+            <a href="mddr.-kate-ina-novakova.html">MDDr. Kateřina Nováková</a>
+            <a href="nase-sestry.html">Naše sestry</a>
+            <a href="dentalni-hygiena.html">Dentální hygiena</a>
+          </div>
+          <a href="vybaveni.html">Vybavení</a>
+        </div>
+      </div>
+
+      <h3>Kde nás najdete</h3>
+      <div class="amo-map">
+        <iframe
+          src="https://mapy.com/s/rezofulodo"
+          title="Mapa — Amodent, Kvestorská 8, Praha 4"
+          width="100%" height="180" frameborder="0"
+          style="border:0;display:block;" loading="lazy"></iframe>
+      </div>
+      <div class="amo-maplinks">
+        <a class="amo-maplink" href="https://mapy.com/s/rezofulodo" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Mapy.com</a>
+        <a class="amo-maplink" href="https://maps.app.goo.gl/oGomh8bqgYMG9MzeA" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Google Maps</a>
+      </div>
+    </aside>
+
+    <main class="amo-content">
+      <div class="amo-sub">
+        <p>Privátní zubní ordinace v Praze 4</p>
+        <span class="amo-langs"><b>EN</b> We speak English &nbsp;&middot;&nbsp; <b>IT</b> Parliamo Italiano</span>
+      </div>
+      <div class="amo-hero">
+        <img src="images/04-skupina.jpg" alt="Tým Amodent" onerror="this.style.height='360px';this.style.background='linear-gradient(135deg,#e8f4ed,#c8e6d4)';this.removeAttribute('src')">
+        <div class="ov"><h1>Pečujeme o váš <em>úsměv</em><br>s láskou</h1></div>
+      </div>
+      <a href="tel:+420724784784" class="amo-cta">Objednat se telefonicky</a>
+    </main>
+
+  </div>
+
+  <div class="amo-foot">&copy; 2025 Amodent s.r.o. &middot; Pro váš úsměv</div>
+
+</div>
+
+<script>
+function toggleTeam(btn){
+  var g=document.getElementById('teamGroup');
+  var open=g.classList.toggle('open');
+  btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+}
+</script>
+
+</body>
+</html>
